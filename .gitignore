@@ -1,0 +1,5 @@
+*.out
+*.o
+*algo1.cpp
+*algo2.cpp
+*chcount.cpp
