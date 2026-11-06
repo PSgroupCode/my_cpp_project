@@ -1,0 +1,47 @@
+// objects using English measurements
+#include <iostream>
+
+using namespace std;
+
+
+class Distance 
+{
+    private:
+        int feet;
+        float inches;
+    public:
+        void getdist()                    //get length from user
+        {
+            cout <<"\n   Enter feet: "; cin >> feet;
+            cout <<"\n   Enter inches: "; cin >> inches;
+        }
+        void showdist() const                  //display distance
+        {
+            cout <<feet <<"\'-"<<inches <<'\"';
+        }
+};
+
+int main()
+{
+    Distance dist[100];                      //array of distances
+    int n=0;                                  //count the entries
+    char ans;                             //user reponse ('y' or 'n')
+
+    cout <<endl;
+    do
+    {
+       cout <<"Enter distance number " << n+1;
+       dist[n++].getdist();            //store distance in array
+       cout << "Enter another (Y/n)?: ";
+       cin >> ans;
+    } while (ans !='n');             //quit if user types 'n'
+
+    for (int j=0; j<n; j++)             //display all distances
+    {
+        cout << "\nDistance number " <<j+1 << "is ";
+        dist[j].showdist();
+    }
+    cout << endl;
+      
+    return 0;
+}
